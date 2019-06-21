@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>jQuery Countdown</title>
+<link rel="stylesheet" href="css/jquery.countdown.css">
+<style type="text/css">
+#defaultCountdown { width: 240px; height: 45px; }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.plugin.min.js"></script>
+<script src="js/jquery.countdown.js"></script>
+<script>
+
+	$(function () {
+		var d2 = new Date();
+		var d1 = new Date();
+var d1 = new Date(d1.getFullYear() + 1, 1 - 8, 21,13,35,55);
+
+
+//var d1 = new Date("2019-06-21 13:25:00");
+/*var austDay = new Date();
+	austDay = new Date(austDay.getFullYear() + 1, 1 - 8, 21,13,31);*/
+	$('#defaultCountdown').countdown({until: d1});
+	$('#year').text(d1.getFullYear());
+
+$("#qdefaultCountdown").html("Diff. Seconds : "+((d1-d2)/1000).toString());
+var vw = parseInt((d1-d2));
+console.log(vw + "value");
+setTimeout("pageRedirect()", vw);
+});
+/*$(function () {*/
+	/*var austDay = new Date();
+	austDay = new Date(austDay.getFullYear() + 1, 1 - 8, 22);
+	$('#defaultCountdown').countdown({until: austDay});
+	$('#year').text(austDay.getFullYear());*/
+
+
+
+/*});
+*/
+
+
+/*setTimeout(function () {
+	var austDay = new Date();
+	austDay = new Date(austDay.getFullYear() + 1, 1 - 8, 21,12,29);
+	$('#defaultCountdown').countdown({until: austDay});
+	$('#year').text(austDay.getFullYear());
+/*onFinish: pageRedirect();
+    },2000);
+
+/*var days = parseInt(prompt("Please enter days:"));
+var seconds = new Date().getTime() / 1000;
+*/
+
+
+
+
+
+/*$(function () {
+	var austDay = new Date();
+	austDay = new Date(austDay.getFullYear() + 1, 1 - 8, 22);
+	console.log(austDay + "seconds");
+	$('#defaultCountdown').countdown({until: austDay});
+	$('#year').text(austDay.getFullYear());*/
+/*var seconds = new Date().getTime() / 1000;*/
+
+//});
+
+
+/*var seconds = days * 24 * 60 * 60;
+*/
+//console.log(seconds + " Seconds");
+
+//setTimeout("pageRedirect()", 10000);
+
+function pageRedirect() {
+        window.location.replace("https://www.tutorialrepublic.com/");
+    } 
+</script>
+</head>
+<body>
+<h1>jQuery Countdown Basics</h1>
+<p>This page demonstrates the very basics of the
+	<a href="http://keith-wood.name/countdown.html">jQuery Countdown plugin</a>.
+	It contains the minimum requirements for using the plugin and
+	can be used as the basis for your own experimentation.</p>
+<p>For more detail see the <a href="http://keith-wood.name/countdownRef.html">documentation reference</a> page.</p>
+<p>Counting down to 26 January <span id="year">2014</span>.</p>
+<div id="defaultCountdown"></div>
+<dl>
+	<dt>Github</dt><dd><a href="https://github.com/kbwood/countdown">https://github.com/kbwood/countdown</a></dd>
+	<dt>Bower</dt><dd>kbw-countdown</dd>
+</dl>
+<div id="qdefaultCountdown"> </div>
+
+</body>
+</html>
